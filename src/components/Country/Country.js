@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Country = (props) => {
     const {name, population, flag, capital, region, area, alpha2Code, timezones} = props.country;
@@ -13,6 +14,7 @@ const Country = (props) => {
             <p>Population: {population}, Area: {area} SKM</p>
             <p><small>Region: {region}, TimeZone: {timezones} </small></p>
             <button onClick={ () =>handleCountryAdd(props.country)}>Add Country</button>
+            <Link to={`/country/${name}`}>Show Details{name}</Link>
 
         </div>
     );
